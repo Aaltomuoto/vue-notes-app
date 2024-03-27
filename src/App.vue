@@ -36,7 +36,7 @@
         <button @click="showModal = true">+</button>
       </header>
       <div class="cards-container">
-        <div v-for="note in notes" class="card" :style="{backgroundColor:note.backgroundColor}">
+        <div v-for="note in notes" class="card" :key="note.id" :style="{backgroundColor:note.backgroundColor}">
           <p class="maintext">{{ note.text }}</p>
           <p class="date">{{note.date.toLocaleDateString("nl-NL")}}</p>
         </div>
