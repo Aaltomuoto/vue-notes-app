@@ -31,19 +31,14 @@
       </div>
     </div>
     <div class="container">
-      <header>
-        {{ notes }}
+      <header> 
         <h1>Notes</h1>
         <button @click="showModal = true">+</button>
       </header>
       <div class="cards-container">
-        <div class="card">
-          <p class="maintext">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate labore tempora ea distinctio nulla quasi.</p>
-          <p class="date">27/03/2024</p>
-        </div>
-        <div class="card">
-          <p class="maintext">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate labore tempora ea distinctio nulla quasi.</p>
-          <p class="date">27/03/2024</p>
+        <div v-for="note in notes" class="card" :style="{backgroundColor:note.backgroundColor}">
+          <p class="maintext">{{ note.text }}</p>
+          <p class="date">{{note.date.toLocaleDateString("nl-NL")}}</p>
         </div>
       </div>
     </div>
